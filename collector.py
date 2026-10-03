@@ -33,7 +33,7 @@ while time.time() < start_time + RUN_TIME:
         hc = zones.get("Harold Cohen Library", {})
 
         row = {
-            "timestamp": datetime.now(ZoneInfo.("Europe/London")).strftime("%Y-%m-%d %H:%M:%S.%f"),
+            "timestamp": datetime.now(ZoneInfo("Europe/London")).strftime("%Y-%m-%d %H:%M:%S.%f"),
             "sj_occ": sj.get("currentOccupancy"),
             "sj_cap": sj.get("maxOccupancy"),
             "hc_occ": hc.get("currentOccupancy"),
