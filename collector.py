@@ -7,7 +7,8 @@ import os
 url = "https://libraryoccupancyapi.liverpool.ac.uk/occupancy"
 file = "occupancy_log.csv"
 
-interval = 60  # seconds
+RUN_TIME = 4 * 60  # 4 minutes
+interval = 60      # 60 seconds
 
 # Create file if it doesn't exist
 if not os.path.exists(file):
@@ -18,7 +19,9 @@ if not os.path.exists(file):
     ])
     df.to_csv(file, index=False)
 
-while True:
+start_time = time.time()
+
+while time.time() < start_time - RUN_TIME:
     try:
         data = requests.get(url).json()
         zones = {z["zoneNo"]: z for z in data}
