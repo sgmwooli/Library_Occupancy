@@ -21,9 +21,11 @@ if not os.path.exists(file):
 
 start_time = time.time()
 
-while time.time() < start_time - RUN_TIME:
+while time.time() < start_time + RUN_TIME:
     try:
-        data = requests.get(url).json()
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        data = response.json()
         zones = {z["zoneNo"]: z for z in data}
 
         sj = zones.get("Sydney Jones Library", {})
