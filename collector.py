@@ -8,8 +8,8 @@ import os
 url = "https://libraryoccupancyapi.liverpool.ac.uk/occupancy"
 file = "occupancy_log.csv"
 
-RUN_TIME = 4 * 60  # 4 minutes
-interval = 60      # 60 seconds
+RUN_TIME = 4.5 * 60  # 4 minutes
+interval = 60        # 60 seconds
 
 # Create file if it doesn't exist
 if not os.path.exists(file):
