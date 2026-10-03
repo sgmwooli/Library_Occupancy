@@ -3,7 +3,6 @@ name: Update library occupancy data
 on:
   schedule:
     - cron: "*/5 * * * *"
-    timezone: "Europe/London"
 
   workflow_dispatch:
 
